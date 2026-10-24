@@ -1,35 +1,690 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Amego segarro</title>
-        <meta charset="UTF-8">
-        <link rel="icon" href="Rares_1.ico"/>
-    
-        <body style="background-image: url(sI.webp);
-        background-size: cover; background-position: center;">
-    </head>
-    <body>
-        <fieldset>
-            <legend><p style="color: #e06f60;">Eres tonto??</p></legend>
-            <form action=""> 
-            <input type="radio" name="Si" checked id="Si"> <label for="Si">Si</label>
-            <input type="radio" name="Si" id="No"> <label for="No">No</label>
-            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<label for="">Que tanto</label><input type="range" placeholder="Si">
-           <br>
-            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" placeholder="Motivo"
-            </form>
-        </fieldset>
-        <h1 style="color: #48ff00;">Sigue mi canal</h1>
-        <br>
-        <a href="https://www.youtube.com/@ASMR_0R1GINAL"> 5+5=PATATA </a>
-        <br><br>
-        <img src="Rares_1.ico" alt="" width="500" height="1000">
-        <audio controls loop> 
-            <source src="Smoke Detector Soundboard.mp3" type="audio/mp3">
-        </audio>
-        <video width="150" autoplay loop>
-            <source src="Droplet_absorbing_into_crystalli…_20261022130539.mp4" type="video/mp4">
-        </video>
-        
-    </body>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Amego Segarro | Página oficial</title>
+
+    <link rel="icon" href="Rares_1.ico">
+
+    <style>
+        /* ===== CONFIGURACIÓN GENERAL ===== */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #eeeeee;
+            background: #080810;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* ===== BARRA DE NAVEGACIÓN ===== */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(8, 8, 16, 0.95);
+            border-bottom: 1px solid #e06f60;
+            backdrop-filter: blur(10px);
+        }
+
+        nav {
+            max-width: 1100px;
+            margin: auto;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: bold;
+            color: #e06f60;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav a:hover {
+            color: #48ff00;
+        }
+
+        /* ===== PORTADA ===== */
+
+        .hero {
+            min-height: 75vh;
+            padding: 100px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    rgba(8, 8, 16, 0.65),
+                    rgba(8, 8, 16, 0.95)
+                ),
+                url("sI.webp") center / cover no-repeat;
+        }
+
+        .etiqueta {
+            display: inline-block;
+            padding: 6px 15px;
+            border: 1px solid #48ff00;
+            border-radius: 30px;
+            color: #48ff00;
+            font-size: 13px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 8vw, 80px);
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-shadow: 0 0 25px rgba(224, 111, 96, 0.5);
+        }
+
+        .hero h1 span {
+            color: #e06f60;
+        }
+
+        .hero p {
+            max-width: 650px;
+            color: #bbbbc9;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        /* ===== BOTONES ===== */
+
+        .boton {
+            display: inline-block;
+            padding: 13px 24px;
+            border-radius: 8px;
+            background: #e06f60;
+            color: white;
+            font-weight: bold;
+            border: 1px solid #e06f60;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+
+        .boton:hover {
+            background: #48ff00;
+            border-color: #48ff00;
+            color: #080810;
+            transform: translateY(-4px);
+            box-shadow: 0 0 20px rgba(72, 255, 0, 0.3);
+        }
+
+        .boton-secundario {
+            background: transparent;
+            border-color: #55556a;
+            margin-left: 10px;
+        }
+
+        /* ===== SECCIONES ===== */
+
+        section {
+            padding: 75px 20px;
+            scroll-margin-top: 80px;
+        }
+
+        .contenedor {
+            max-width: 1050px;
+            margin: auto;
+        }
+
+        .titulo-seccion {
+            text-align: center;
+            font-size: 34px;
+            margin-bottom: 12px;
+        }
+
+        .subtitulo {
+            text-align: center;
+            color: #9999ad;
+            margin-bottom: 40px;
+        }
+
+        .acento {
+            color: #e06f60;
+        }
+
+        /* ===== TARJETAS ===== */
+
+        .tarjetas {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(220px, 1fr)
+            );
+            gap: 20px;
+        }
+
+        .tarjeta {
+            padding: 28px;
+            background: #11111e;
+            border: 1px solid #29293c;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-7px);
+            border-color: #e06f60;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .icono {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .tarjeta h3 {
+            color: #48ff00;
+            margin-bottom: 10px;
+        }
+
+        .tarjeta p {
+            color: #aaaabd;
+        }
+
+        /* ===== ENCUESTA ===== */
+
+        .encuesta {
+            max-width: 650px;
+            margin: auto;
+            padding: 30px;
+            background: #11111e;
+            border: 1px solid #39394c;
+            border-radius: 15px;
+        }
+
+        fieldset {
+            border: 1px solid #e06f60;
+            border-radius: 10px;
+            padding: 25px;
+        }
+
+        legend {
+            padding: 0 12px;
+            color: #e06f60;
+            font-size: 21px;
+            font-weight: bold;
+        }
+
+        .pregunta {
+            margin-bottom: 20px;
+        }
+
+        .pregunta label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="radio"] {
+            accent-color: #e06f60;
+            margin-right: 5px;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            accent-color: #e06f60;
+            cursor: pointer;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #39394c;
+            border-radius: 8px;
+            background: #080810;
+            color: white;
+            font: inherit;
+        }
+
+        input[type="text"]:focus,
+        textarea:focus {
+            outline: 2px solid #48ff00;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .encuesta .boton {
+            margin-top: 15px;
+        }
+
+        /* ===== CANAL ===== */
+
+        .canal {
+            text-align: center;
+            background:
+                radial-gradient(
+                    ellipse at center,
+                    #25202d 0%,
+                    #080810 70%
+                );
+        }
+
+        .canal h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .canal p {
+            color: #aaaabd;
+            margin-bottom: 25px;
+        }
+
+        /* ===== MULTIMEDIA ===== */
+
+        .multimedia {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(250px, 1fr)
+            );
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .multimedia article {
+            background: #11111e;
+            border: 1px solid #29293c;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .multimedia h3 {
+            margin-bottom: 15px;
+            color: #48ff00;
+        }
+
+        .multimedia img,
+        .multimedia video {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: auto;
+            border-radius: 10px;
+        }
+
+        .multimedia audio {
+            width: 100%;
+        }
+
+        /* ===== PIE DE PÁGINA ===== */
+
+        footer {
+            padding: 30px 20px;
+            text-align: center;
+            border-top: 1px solid #29293c;
+            background: #050509;
+            color: #88889b;
+        }
+
+        footer span {
+            color: #e06f60;
+        }
+
+        footer a:hover {
+            color: #48ff00;
+        }
+
+        /* ===== MÓVILES ===== */
+
+        @media (max-width: 600px) {
+            nav {
+                justify-content: center;
+            }
+
+            nav ul {
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .hero {
+                min-height: 65vh;
+                padding: 70px 20px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .boton-secundario {
+                margin: 10px 0 0;
+            }
+
+            section {
+                padding: 50px 15px;
+            }
+
+            .titulo-seccion {
+                font-size: 28px;
+            }
+
+            .encuesta {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== NAVEGACIÓN ===== -->
+
+    <header>
+        <nav>
+            <a href="#inicio" class="logo">AMEGO<span>™</span></a>
+
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre la web</a></li>
+                <li><a href="#encuesta">Encuesta</a></li>
+                <li><a href="#canal">Mi canal</a></li>
+                <li><a href="#multimedia">Multimedia</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ===== PORTADA ===== -->
+
+        <section class="hero" id="inicio">
+
+            <span class="etiqueta">BIENVENIDO AL CAOS</span>
+
+            <h1>AMEGO <span>SEGARRO</span></h1>
+
+            <p>
+                Has encontrado una página que probablemente
+                no necesitabas visitar, pero ahora estás aquí.
+                Disfruta del espectáculo.
+            </p>
+
+            <div>
+                <a href="#sobre-mi" class="boton">
+                    Explorar la web
+                </a>
+
+                <a href="#encuesta" class="boton boton-secundario">
+                    Hacer la encuesta
+                </a>
+            </div>
+
+        </section>
+
+        <!-- ===== SOBRE LA WEB ===== -->
+
+        <section id="sobre-mi">
+            <div class="contenedor">
+
+                <h2 class="titulo-seccion">
+                    ¿Qué está <span class="acento">pasando aquí?</span>
+                </h2>
+
+                <p class="subtitulo">
+                    Una web hecha con HTML, CSS y decisiones cuestionables.
+                </p>
+
+                <div class="tarjetas">
+
+                    <article class="tarjeta">
+                        <div class="icono">🎮</div>
+                        <h3>Modo gamer</h3>
+                        <p>
+                            Aquí se viene a jugar, perder partidas
+                            y echarle la culpa al lag.
+                        </p>
+                    </article>
+
+                    <article class="tarjeta">
+                        <div class="icono">💀</div>
+                        <h3>Humor dudoso</h3>
+                        <p>
+                            El contenido puede provocar risas,
+                            confusión o ganas de cerrar la pestaña.
+                        </p>
+                    </article>
+
+                    <article class="tarjeta">
+                        <div class="icono">🔥</div>
+                        <h3>Caos absoluto</h3>
+                        <p>
+                            No hay explicación científica.
+                            Simplemente funciona... más o menos.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ENCUESTA ===== -->
+
+        <section id="encuesta">
+            <div class="contenedor">
+
+                <h2 class="titulo-seccion">
+                    Encuesta <span class="acento">oficial</span>
+                </h2>
+
+                <p class="subtitulo">
+                    Tus respuestas serán juzgadas por nadie.
+                </p>
+
+                <div class="encuesta">
+
+                    <form action="#" method="get">
+
+                        <fieldset>
+
+                            <legend>¿Eres tonto?</legend>
+
+                            <div class="pregunta">
+                                <label>
+                                    <input
+                                        type="radio"
+                                        name="respuesta"
+                                        value="si"
+                                        checked
+                                    >
+                                    Sí, obviamente
+                                </label>
+
+                                <label>
+                                    <input
+                                        type="radio"
+                                        name="respuesta"
+                                        value="no"
+                                    >
+                                    No, soy una eminencia
+                                </label>
+                            </div>
+
+                            <div class="pregunta">
+                                <label for="cantidad">
+                                    ¿Qué tanto? Del 0 al 100
+                                </label>
+
+                                <input
+                                    type="range"
+                                    id="cantidad"
+                                    name="cantidad"
+                                    min="0"
+                                    max="100"
+                                    value="50"
+                                >
+                            </div>
+
+                            <div class="pregunta">
+                                <label for="motivo">
+                                    Explica tus motivos:
+                                </label>
+
+                                <textarea
+                                    id="motivo"
+                                    name="motivo"
+                                    placeholder="Mi abogado me recomienda no responder..."
+                                ></textarea>
+                            </div>
+
+                            <button type="submit" class="boton">
+                                Enviar respuestas
+                            </button>
+
+                            <button type="reset"
+                                    class="boton boton-secundario">
+                                Borrar respuestas
+                            </button>
+
+                        </fieldset>
+
+                    </form>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CANAL ===== -->
+
+        <section class="canal" id="canal">
+
+            <div class="contenedor">
+
+                <span class="etiqueta">CONTENIDO EXCLUSIVO</span>
+
+                <h2>
+                    Sigue mi <span class="acento">canal</span>
+                </h2>
+
+                <p>
+                    ¿Todavía no te has suscrito?
+                    Este es el momento de tomar una buena decisión.
+                </p>
+
+                <a
+                    href="https://www.youtube.com/@ASMR_0R1GINAL"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="boton"
+                >
+                    ▶ Visitar canal de YouTube
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- ===== MULTIMEDIA ===== -->
+
+        <section id="multimedia">
+            <div class="contenedor">
+
+                <h2 class="titulo-seccion">
+                    Zona <span class="acento">multimedia</span>
+                </h2>
+
+                <p class="subtitulo">
+                    Contenido de dudosa procedencia (de tu propia carpeta).
+                </p>
+
+                <div class="multimedia">
+
+                    <article>
+                        <h3>🖼️ Imagen misteriosa</h3>
+
+                        <img
+                            src="Rares_1.ico"
+                            alt="Imagen de la web"
+                        >
+                    </article>
+
+                    <article>
+                        <h3>🔊 Sonido legendario</h3>
+
+                        <audio controls loop>
+                            <source
+                                src="Smoke Detector Soundboard.mp3"
+                                type="audio/mpeg"
+                            >
+                            Tu navegador no admite audio.
+                        </audio>
+                    </article>
+
+                    <article>
+                        <h3>🎬 Vídeo aleatorio</h3>
+
+                        <video
+                            width="400"
+                            controls
+                            autoplay
+                            muted
+                            loop
+                            playsinline
+                        >
+                            <source
+                                src="Droplet_absorbing_into_crystalli…_20261022130539.mp4"
+                                type="video/mp4"
+                            >
+
+                            Tu navegador no admite vídeo.
+                        </video>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== PIE DE PÁGINA ===== -->
+
+    <footer>
+        <p>
+            © 2026 <span>Amego Segarro</span> |
+            Creado con HTML y CSS.
+        </p>
+
+        <p>
+            <a href="#inicio">Volver arriba ↑</a>
+        </p>
+    </footer>
+
+</body>
 </html>
